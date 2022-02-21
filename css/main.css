@@ -111,12 +111,24 @@ nav {
   opacity: 0.9;
 }
 
+article {
+  column-gap: 5rem;
+  padding: 1.5rem;
+  margin: 2rem;
+  background: radial-gradient(circle, #ede3eb 0%, #e2e3d9 91%, #e3d9e1 100%);
+  box-shadow: -2px -2px 20px 5px #cccccc;
+}
+
+p {
+  font-family: OpenSans-semi;
+  line-height: 31px;
+  padding: 2rem 0;
+  color: #555;
+}
+
 .header .hero {
-  color: #15202b;
-  display: grid;
-  grid-template-columns: 5vw auto 5vw;
-  grid-template-rows: 100px 1fr 100px;
   position: relative;
+  padding: 5rem;
 }
 .header .hero::before {
   content: "";
@@ -128,18 +140,13 @@ nav {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0.5;
-}
-.header .hero__container {
-  grid-column: 2;
-  grid-row: 2;
+  opacity: 0.7;
 }
 .header .hero__container h1.hero__title {
-  grid-column: 2;
   position: relative;
   color: #15202b;
   font-size: 76px;
-  line-height: 113px;
+  line-height: 56px;
   padding-bottom: 1rem;
 }
 @media (max-width: 565px) {
@@ -159,7 +166,6 @@ nav {
   color: #15202b;
   font-family: OpenSans-semi;
   font-size: 60px;
-  grid-column: 2;
   position: relative;
   padding-bottom: 1rem;
 }
@@ -202,48 +208,49 @@ nav {
   width: max-content;
 }
 
-.main .page-title {
-  background: #111000;
+.page-title {
   background: linear-gradient(90deg, #111000 0%, #444444 50%, #111000 100%);
-  color: #efefef;
   grid-column: 2;
-  font-size: 47px;
   padding: 3rem 0;
-  text-transform: uppercase;
   text-align: center;
 }
-.main .page-title span {
-  border-bottom: 5px solid #999;
+.page-title h1 {
+  text-transform: uppercase;
+  font-size: 60px;
+  color: #e8ebd9;
 }
-.main .page-title h2 {
-  word-spacing: 2px;
+.page-title h1 span {
+  border-bottom: 1px solid #999;
 }
-.main section {
+
+section {
   padding: 1.5rem 0;
 }
-.main h2 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 900;
+
+h2 {
   font-size: 37px;
   line-height: 56px;
+  color: #e8ebd9;
 }
-.main h3 {
+
+h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 900;
   font-size: 23px;
   line-height: 35px;
 }
-.main p {
+
+p {
   max-width: 600px;
 }
+
 @media (min-width: 1200px) {
-  .main p {
+  p {
     max-width: 75vw;
   }
 }
-.main figure {
+figure {
   display: block;
   width: 100%;
   min-width: 200px;
@@ -252,61 +259,63 @@ nav {
   text-align: center;
   align-self: center;
 }
-.main figure img {
-  border-radius: 5px;
-}
 @media (min-width: 1200px) {
-  .main figure {
+  figure figure {
     justify-self: center;
   }
 }
-.main .mission {
+@media (min-width: 566px) {
+  figure .disasters__plight {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+figure img {
+  border-radius: 5px;
+}
+
+.mission {
   display: grid;
   grid-column: 2;
   grid-template-columns: 1fr;
-  column-gap: 5rem;
 }
-.main .mission__headergroup {
+.mission__headergroup {
   align-self: center;
 }
+.mission__headergroup h2 {
+  color: #333;
+}
+
 @media (min-width: 566px) {
-  .main .mission {
+  .mission {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
-.main .disasters {
+.disasters {
   grid-column: 2;
 }
-.main .disasters .disasters__plight {
+.disasters h2 {
+  color: #333;
+}
+.disasters .disasters__plight {
   align-items: center;
   display: grid;
   column-gap: 5rem;
   justify-items: center;
 }
-.main .disasters .disasters__plight p {
+.disasters .disasters__plight p {
   align-self: center;
 }
 @media (min-width: 566px) {
-  .main .disasters .disasters__plight {
+  .disasters .disasters__plight {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
-.main .solution {
+
+.solution {
   grid-column: 2;
 }
-.main .solution .disasters__plight {
-  align-items: center;
-  display: grid;
-  column-gap: 5rem;
-  justify-items: center;
-}
-.main .solution .disasters__plight p {
-  align-self: center;
-}
-@media (min-width: 566px) {
-  .main .solution .disasters__plight {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
+.solution h2 {
+  color: #333;
 }
 
 *,
@@ -324,12 +333,10 @@ h4,
 h5,
 h6 {
   font-family: Lora;
-}
-
-p {
-  font-family: OpenSans-semi;
-  line-height: 31px;
-  padding: 0.5rem 0;
+  color: #333;
+  text-shadow: 1px 1px #a79794;
+  letter-spacing: 5px;
+  word-spacing: 2px;
 }
 
 img {
@@ -353,6 +360,7 @@ figure {
 figcaption {
   padding: 0.5rem;
   font-size: 1.1rem;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=main.css.map */
