@@ -1,0 +1,50 @@
+@use '../abstracts'as *;
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: $header-font-family;
+}
+
+p {
+   font-family: $body-font-family;
+   line-height: $body-line-height;
+   padding: 0.5rem 0;
+}
+
+img {
+   display: block;
+   height: auto;
+   width: 100%;
+}
+
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+figure {
+   padding: 1rem 0;
+}
+
+figcaption {
+   padding: 0.5rem;
+   font-size: 1.1rem;
+
+}

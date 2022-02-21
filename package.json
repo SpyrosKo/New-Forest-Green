@@ -1,0 +1,16 @@
+{
+  "name": "new-forest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss:dist/css",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "RoKoE",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "sass": "^1.35.1"
+  }
+}

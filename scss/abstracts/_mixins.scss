@@ -1,0 +1,64 @@
+@use 'variables'as *;
+
+@mixin hero-bg() {
+   background-image: url('../images/brown-trees.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   opacity: 0.5;
+}
+
+@mixin button() {
+   border-radius: $border-radius;
+   padding: $CTA-padding;
+   display: block;
+   text-transform: $text-transform;
+   font-weight: $CTA-font-weight;
+   letter-spacing: 1px;
+   font-family: OpenSans-semi;
+}
+
+@mixin heading-styles() {
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   font-weight: 900;
+}
+
+@mixin body-styles() {}
+
+
+// Media Queries
+@mixin for-size($size) {
+   @if $size==phone {
+      @media (max-width: 565px) {
+         @content;
+      }
+   }
+
+   @else if $size==tablet {
+      @media (min-width: 566px) {
+         @content;
+      }
+   }
+
+   @else if $size==laptop {
+      @media (min-width: 900px) {
+         @content;
+      }
+   }
+
+   @else if $size==desktop {
+      @media (min-width: 1200px) {
+         @content;
+      }
+   }
+
+   @else if $size==big-desktop {
+      @media (min-width: 1800px) {
+         @content;
+      }
+   }
+}

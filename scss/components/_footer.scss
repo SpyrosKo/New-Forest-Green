@@ -1,0 +1,23 @@
+@use '../abstracts'as *;
+
+.footer {
+   background-color: #070A0E;
+   color: #e9e9e9;
+   // padding: 3rem;
+
+   h2 {
+      font-family: Montserrat-Regular;
+      // line-height: 2rem;
+   }
+
+   &__bottom {
+      font-family: Montserrat-Regular;
+      text-align: center;
+
+      .footer__copyright {
+         text-transform: uppercase;
+         font-size: 0.7rem;
+         opacity: 0.9;
+      }
+   }
+}

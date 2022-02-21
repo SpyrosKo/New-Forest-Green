@@ -1,0 +1,234 @@
+@use "../abstracts" as *;
+@use "../components" as *;
+
+.header {
+  .hero {
+    color: $primary-color;
+    display: grid;
+    grid-template-columns: 5vw auto 5vw;
+    grid-template-rows: 100px 1fr 100px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      @include hero-bg;
+    }
+
+    &__container {
+      grid-column: 2;
+      grid-row: 2;
+
+      h1.hero__title {
+        grid-column: 2;
+        position: relative;
+        color: $primary-color;
+        font-size: $h1-size;
+        line-height: $h1-line-height;
+        padding-bottom: 1rem;
+      }
+
+      @include for-size(phone) {
+        h1.hero__title {
+          font-size: $h2-size;
+          line-height: $h3-line-height;
+          padding: 3rem 0;
+        }
+      }
+
+      @include for-size(tablet) {
+        h1.hero__title {
+          font-size: $h2-size;
+          line-height: $h3-line-height;
+        }
+      }
+
+      .hero__subheader {
+        color: #15202b;
+        font-family: $body-font-family;
+        font-size: $h2-size;
+        grid-column: 2;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      @include for-size(phone) {
+        .hero__subheader {
+          font-size: $h6-size;
+          line-height: $h5-line-height;
+        }
+      }
+
+      @include for-size(tablet) {
+        .hero__subheader {
+          font-size: $h5-size;
+          line-height: $h5-line-height;
+        }
+      }
+
+      @include for-size(desktop) {
+        .hero__subheader {
+          width: 80vw;
+        }
+      }
+
+      .author {
+        font-style: italic;
+        opacity: 0.9;
+      }
+
+      .hero__cta {
+        @include button;
+        background-color: #037820;
+        color: #cdc8c8;
+        cursor: pointer;
+        font-size: 1.5rem;
+        grid-column: 2;
+        margin: 1rem 0;
+        position: relative;
+        width: max-content;
+      }
+    }
+  }
+}
+
+.main {
+  .page-title {
+   background: rgb(17,16,0);
+   background: linear-gradient(90deg, rgba(17,16,0,1) 0%, rgba(68,68,68,1) 50%, rgba(17,16,0,1) 100%);
+    color: #efefef;
+    grid-column: 2;
+    font-size: $h3-size;
+    padding: 3rem 0;
+    text-transform: uppercase;
+    text-align: center;
+
+    span {
+      border-bottom: 5px solid #999;
+    }
+
+    h2 {
+       word-spacing: 2px;;
+    }
+
+
+  }
+
+  section {
+    padding: 1.5rem 0;
+  }
+
+  h2 {
+    @include heading-styles;
+    font-size: $h4-size;
+    line-height: $h4-line-height;
+  }
+
+  h3 {
+    @include heading-styles;
+    font-size: $h6-size;
+    line-height: $h6-line-height;
+  }
+
+  p {
+    max-width: 600px;
+  }
+
+  @include for-size(desktop) {
+    p {
+      max-width: 75vw;
+    }
+  }
+
+  figure {
+    display: block;
+    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
+    justify-self: start;
+    text-align: center;
+    align-self: center;
+
+    img {
+      border-radius: 5px;
+    }
+  }
+
+  @include for-size(desktop) {
+    figure {
+      justify-self: center;
+    }
+  }
+
+  // MISSION
+  .mission {
+    display: grid;
+    grid-column: 2;
+    grid-template-columns: 1fr;
+    column-gap: 5rem;
+
+    &__headergroup {
+      align-self: center;
+    }
+  }
+
+  @include for-size(tablet) {
+    .mission {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  //DISASTERS
+  .disasters {
+    grid-column: 2;
+
+    .inbetweem {
+      .inbetween-paragraph {
+      }
+    }
+
+    .disasters__plight {
+      align-items: center;
+      display: grid;
+      column-gap: 5rem;
+      justify-items: center;
+
+      .disasters__headergroup {
+      }
+
+      p {
+        align-self: center;
+      }
+    }
+
+    @include for-size(tablet) {
+      .disasters__plight {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+  }
+
+  .solution {
+    grid-column: 2;
+
+    .disasters__plight {
+      align-items: center;
+      display: grid;
+      column-gap: 5rem;
+      justify-items: center;
+
+      .disasters__headergroup {
+      }
+
+      p {
+        align-self: center;
+      }
+    }
+
+    @include for-size(tablet) {
+      .disasters__plight {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+  }
+}
