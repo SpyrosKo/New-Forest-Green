@@ -8,8 +8,6 @@
    padding: 0;
 }
 
-body {}
-
 h1,
 h2,
 h3,
@@ -17,12 +15,10 @@ h4,
 h5,
 h6 {
    font-family: $header-font-family;
-}
-
-p {
-   font-family: $body-font-family;
-   line-height: $body-line-height;
-   padding: 0.5rem 0;
+   color: #333;
+   text-shadow: 1px 1px #a79794;
+   letter-spacing: 5px;
+   word-spacing: 2px;
 }
 
 img {
@@ -46,5 +42,5 @@ figure {
 figcaption {
    padding: 0.5rem;
    font-size: 1.1rem;
-
+   font-style: italic;
 }

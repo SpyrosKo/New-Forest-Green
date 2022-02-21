@@ -1,13 +1,26 @@
 @use "../abstracts" as *;
 @use "../components" as *;
 
-.header {
+
+article {
+  column-gap: 5rem;
+  padding: 1.5rem;
+  margin: 2rem;
+  background: radial-gradient(circle, hsl(311, 23%, 91%) 0%, hsl(66, 16%, 87%) 91%, hsl(312, 15%, 87%) 100%);
+  box-shadow: -2px -2px 20px 5px rgb(204, 204, 204);
+}
+
+p {
+  font-family: $body-font-family;
+  line-height: $body-line-height;
+  padding: 2rem 0;
+  color: #555;
+}
+
+.header {  
   .hero {
-    color: $primary-color;
-    display: grid;
-    grid-template-columns: 5vw auto 5vw;
-    grid-template-rows: 100px 1fr 100px;
     position: relative;
+    padding: 5rem;
 
     &::before {
       content: "";
@@ -16,23 +29,19 @@
     }
 
     &__container {
-      grid-column: 2;
-      grid-row: 2;
-
       h1.hero__title {
-        grid-column: 2;
         position: relative;
         color: $primary-color;
         font-size: $h1-size;
-        line-height: $h1-line-height;
+        line-height: $h4-line-height;
         padding-bottom: 1rem;
       }
 
       @include for-size(phone) {
-        h1.hero__title {
-          font-size: $h2-size;
-          line-height: $h3-line-height;
-          padding: 3rem 0;
+        h1.hero__title {          
+        font-size: $h2-size;
+        line-height: $h3-line-height;
+        padding: 3rem 0;
         }
       }
 
@@ -47,7 +56,6 @@
         color: #15202b;
         font-family: $body-font-family;
         font-size: $h2-size;
-        grid-column: 2;
         position: relative;
         padding-bottom: 1rem;
       }
@@ -92,36 +100,36 @@
   }
 }
 
-.main {
-  .page-title {
-   background: rgb(17,16,0);
-   background: linear-gradient(90deg, rgba(17,16,0,1) 0%, rgba(68,68,68,1) 50%, rgba(17,16,0,1) 100%);
-    color: #efefef;
-    grid-column: 2;
-    font-size: $h3-size;
-    padding: 3rem 0;
-    text-transform: uppercase;
-    text-align: center;
-
-    span {
-      border-bottom: 5px solid #999;
+.main {  
+  figure {
+    
     }
-
-    h2 {
-       word-spacing: 2px;;
-    }
-
-
   }
+  .page-title {
+  background: linear-gradient(90deg, rgba(17,16,0,1) 0%, rgba(68,68,68,1) 50%, rgba(17,16,0,1) 100%);
+  grid-column: 2;
+  padding: 3rem 0;
+  text-align: center;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: $h2-size;
+    color: #e8ebd9;
+    span {
+      border-bottom: 1px solid #999;
+    }
+  }  
+}
 
   section {
     padding: 1.5rem 0;
   }
 
   h2 {
-    @include heading-styles;
+    // @include heading-styles;
     font-size: $h4-size;
     line-height: $h4-line-height;
+    color: #e8ebd9;
   }
 
   h3 {
@@ -149,14 +157,19 @@
     text-align: center;
     align-self: center;
 
+    @include for-size(desktop) {
+      figure {
+        justify-self: center;
+      }
+    }
+    
+    @include for-size(tablet) {
+      .disasters__plight {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
     img {
       border-radius: 5px;
-    }
-  }
-
-  @include for-size(desktop) {
-    figure {
-      justify-self: center;
     }
   }
 
@@ -164,11 +177,13 @@
   .mission {
     display: grid;
     grid-column: 2;
-    grid-template-columns: 1fr;
-    column-gap: 5rem;
+    grid-template-columns: 1fr; 
 
     &__headergroup {
       align-self: center;
+      h2 {
+        color: #333;
+      }
     }
   }
 
@@ -182,9 +197,8 @@
   .disasters {
     grid-column: 2;
 
-    .inbetweem {
-      .inbetween-paragraph {
-      }
+    h2 {
+      color: #333;
     }
 
     .disasters__plight {
@@ -192,9 +206,6 @@
       display: grid;
       column-gap: 5rem;
       justify-items: center;
-
-      .disasters__headergroup {
-      }
 
       p {
         align-self: center;
@@ -211,24 +222,11 @@
   .solution {
     grid-column: 2;
 
-    .disasters__plight {
-      align-items: center;
-      display: grid;
-      column-gap: 5rem;
-      justify-items: center;
-
-      .disasters__headergroup {
-      }
-
-      p {
-        align-self: center;
-      }
-    }
-
-    @include for-size(tablet) {
-      .disasters__plight {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
+    h2 {
+      color: #333;
     }
   }
-}
+
+  
+
+
