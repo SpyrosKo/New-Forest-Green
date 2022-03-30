@@ -1,8 +1,4 @@
 @font-face {
-  font-family: Lora;
-  src: url(../../dist/fonts/Lora/Lora-VariableFont_wght.ttf);
-}
-@font-face {
   font-family: OpenSans;
   src: url(../../dist/fonts/OpenSans/OpenSans-Regular.ttf);
 }
@@ -10,13 +6,21 @@
   font-family: OpenSans-semi;
   src: url(../../dist/fonts/OpenSans/OpenSans-SemiBold.ttf);
 }
+@font-face {
+  font-family: Moderne-Sans;
+  src: url(../../dist/fonts/Moderne-Sans/Moderne-Sans.ttf);
+}
+@font-face {
+  font-family: Saros;
+  src: url(../../dist/fonts/Saros/Saros-Regular.ttf);
+}
 nav {
   align-items: center;
   background-color: #333333;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 35px;
+  padding: 0px 25px;
 }
 
 .nav-ul {
@@ -48,52 +52,43 @@ nav {
   text-decoration: none;
 }
 
-@media (max-width: 565px) {
-  nav {
-    opacity: 0.98;
-    z-index: 2;
-    width: 96vw;
-    position: fixed;
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav-ul.show {
-    display: flex;
-    height: 80vh;
-  }
-
-  .nav-ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-ul li a {
-    padding: 40px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    width: 100%;
-    text-transform: uppercase;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .logo {
-    width: 80px;
-  }
+.nav-ul {
+  display: none;
+  flex-direction: column;
+  width: 100%;
 }
+
+.nav-ul.show {
+  display: flex;
+  height: 80vh;
+}
+
+.nav-ul li {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-ul li a {
+  padding: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: block;
+}
+
+.btn {
+  width: 100%;
+}
+
+.logo {
+  width: 80px;
+}
+
 .footer {
   background-color: #070A0E;
   color: #e9e9e9;
@@ -112,25 +107,52 @@ nav {
 }
 
 article {
-  column-gap: 5rem;
-  padding: 1.5rem;
-  margin: 2rem;
   background: radial-gradient(circle, #ede3eb 0%, #e2e3d9 91%, #e3d9e1 100%);
   box-shadow: -2px -2px 20px 5px #cccccc;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+section {
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: 47px;
+  line-height: 113px;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 23px;
+  line-height: 70px;
 }
 
 p {
-  font-family: OpenSans-semi;
+  font-family: Saros;
   line-height: 31px;
-  padding: 2rem 0;
-  color: #555;
+  padding-bottom: 16px;
+  font-size: 20px;
 }
 
-.header .hero {
-  position: relative;
-  padding: 5rem;
+img {
+  border-radius: 5px;
 }
-.header .hero::before {
+
+figure {
+  display: block;
+  width: 100%;
+  min-width: 200px;
+  max-width: 300px;
+  justify-self: start;
+  text-align: center;
+  align-self: center;
+}
+.hero {
+  position: relative;
+  padding: 1rem;
+}
+.hero::before {
   content: "";
   position: absolute;
   background-image: url("../images/brown-trees.jpg");
@@ -142,55 +164,26 @@ p {
   right: 0;
   opacity: 0.7;
 }
-.header .hero__container h1.hero__title {
+.hero__container .hero__title {
   position: relative;
   color: #15202b;
-  font-size: 76px;
+  font-size: 47px;
   line-height: 56px;
   padding-bottom: 1rem;
 }
-@media (max-width: 565px) {
-  .header .hero__container h1.hero__title {
-    font-size: 60px;
-    line-height: 70px;
-    padding: 3rem 0;
-  }
-}
-@media (min-width: 566px) {
-  .header .hero__container h1.hero__title {
-    font-size: 60px;
-    line-height: 70px;
-  }
-}
-.header .hero__container .hero__subheader {
+.hero__container .hero__subheader {
   color: #15202b;
-  font-family: OpenSans-semi;
-  font-size: 60px;
+  font-family: Saros;
+  font-size: 23px;
+  line-height: 35px;
   position: relative;
   padding-bottom: 1rem;
 }
-@media (max-width: 565px) {
-  .header .hero__container .hero__subheader {
-    font-size: 23px;
-    line-height: 44px;
-  }
-}
-@media (min-width: 566px) {
-  .header .hero__container .hero__subheader {
-    font-size: 29px;
-    line-height: 44px;
-  }
-}
-@media (min-width: 1200px) {
-  .header .hero__container .hero__subheader {
-    width: 80vw;
-  }
-}
-.header .hero__container .author {
+.hero__container .author {
   font-style: italic;
   opacity: 0.9;
 }
-.header .hero__container .hero__cta {
+.hero__container .hero__cta {
   border-radius: 5px;
   padding: 0.5rem 0.75rem;
   display: block;
@@ -208,114 +201,55 @@ p {
   width: max-content;
 }
 
-.page-title {
+.main__headings {
   background: linear-gradient(90deg, #111000 0%, #444444 50%, #111000 100%);
   grid-column: 2;
   padding: 3rem 0;
   text-align: center;
+  display: grid;
 }
-.page-title h1 {
+.main__headings .main__title {
   text-transform: uppercase;
   font-size: 60px;
-  color: #e8ebd9;
 }
-.page-title h1 span {
+.main__headings .main__title span {
   border-bottom: 1px solid #999;
 }
-
-section {
-  padding: 1.5rem 0;
-}
-
-h2 {
-  font-size: 37px;
-  line-height: 56px;
+.main__headings .main__subheader,
+.main__headings .main__title {
   color: #e8ebd9;
-}
-
-h3 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 900;
-  font-size: 23px;
-  line-height: 35px;
-}
-
-p {
-  max-width: 600px;
-}
-
-@media (min-width: 1200px) {
-  p {
-    max-width: 75vw;
-  }
-}
-figure {
-  display: block;
-  width: 100%;
-  min-width: 200px;
-  max-width: 300px;
-  justify-self: start;
-  text-align: center;
-  align-self: center;
-}
-@media (min-width: 1200px) {
-  figure figure {
-    justify-self: center;
-  }
-}
-@media (min-width: 566px) {
-  figure .disasters__plight {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
-figure img {
-  border-radius: 5px;
+  text-decoration: none;
 }
 
 .mission {
-  display: grid;
-  grid-column: 2;
-  grid-template-columns: 1fr;
+  margin: 5rem 1rem;
 }
-.mission__headergroup {
-  align-self: center;
-}
-.mission__headergroup h2 {
-  color: #333;
+.mission .scetion {
+  margin-bottom: 3rem;
 }
 
-@media (min-width: 566px) {
-  .mission {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
 .disasters {
   grid-column: 2;
 }
-.disasters h2 {
+.disasters .disasters__headings {
   color: #333;
+  font-size: 20px;
 }
-.disasters .disasters__plight {
+.disasters .disasters__grid .disasters__plight {
   align-items: center;
   display: grid;
   column-gap: 5rem;
   justify-items: center;
+  margin-bottom: 3rem;
 }
-.disasters .disasters__plight p {
+.disasters .disasters__grid .disasters__plight p {
   align-self: center;
-}
-@media (min-width: 566px) {
-  .disasters .disasters__plight {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
 }
 
 .solution {
   grid-column: 2;
-}
-.solution h2 {
-  color: #333;
+  margin-bottom: 0;
+  padding-bottom: 10rem;
 }
 
 *,
@@ -332,10 +266,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Lora;
+  font-family: Saros;
   color: #333;
   text-shadow: 1px 1px #a79794;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
   word-spacing: 2px;
 }
 

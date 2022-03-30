@@ -1,232 +1,225 @@
 @use "../abstracts" as *;
 @use "../components" as *;
 
-
 article {
-  column-gap: 5rem;
-  padding: 1.5rem;
-  margin: 2rem;
-  background: radial-gradient(circle, hsl(311, 23%, 91%) 0%, hsl(66, 16%, 87%) 91%, hsl(312, 15%, 87%) 100%);
+  background: radial-gradient(
+    circle,
+    hsl(311, 23%, 91%) 0%,
+    hsl(66, 16%, 87%) 91%,
+    hsl(312, 15%, 87%) 100%
+  );
   box-shadow: -2px -2px 20px 5px rgb(204, 204, 204);
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+section {
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: $h3-size;
+  line-height: $h1-line-height;
+  // color: #e8ebd9;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: $h6-size;
+  line-height: 70px;
 }
 
 p {
   font-family: $body-font-family;
   line-height: $body-line-height;
-  padding: 2rem 0;
-  color: #555;
+  padding-bottom: 16px;
+  font-size: 20px;
 }
 
-.header {  
-  .hero {
-    position: relative;
-    padding: 5rem;
-
-    &::before {
-      content: "";
-      position: absolute;
-      @include hero-bg;
-    }
-
-    &__container {
-      h1.hero__title {
-        position: relative;
-        color: $primary-color;
-        font-size: $h1-size;
-        line-height: $h4-line-height;
-        padding-bottom: 1rem;
-      }
-
-      @include for-size(phone) {
-        h1.hero__title {          
-        font-size: $h2-size;
-        line-height: $h3-line-height;
-        padding: 3rem 0;
-        }
-      }
-
-      @include for-size(tablet) {
-        h1.hero__title {
-          font-size: $h2-size;
-          line-height: $h3-line-height;
-        }
-      }
-
-      .hero__subheader {
-        color: #15202b;
-        font-family: $body-font-family;
-        font-size: $h2-size;
-        position: relative;
-        padding-bottom: 1rem;
-      }
-
-      @include for-size(phone) {
-        .hero__subheader {
-          font-size: $h6-size;
-          line-height: $h5-line-height;
-        }
-      }
-
-      @include for-size(tablet) {
-        .hero__subheader {
-          font-size: $h5-size;
-          line-height: $h5-line-height;
-        }
-      }
-
-      @include for-size(desktop) {
-        .hero__subheader {
-          width: 80vw;
-        }
-      }
-
-      .author {
-        font-style: italic;
-        opacity: 0.9;
-      }
-
-      .hero__cta {
-        @include button;
-        background-color: #037820;
-        color: #cdc8c8;
-        cursor: pointer;
-        font-size: 1.5rem;
-        grid-column: 2;
-        margin: 1rem 0;
-        position: relative;
-        width: max-content;
-      }
-    }
-  }
+img {
+  border-radius: 5px;
 }
 
-.main {  
-  figure {
-    
-    }
-  }
-  .page-title {
-  background: linear-gradient(90deg, rgba(17,16,0,1) 0%, rgba(68,68,68,1) 50%, rgba(17,16,0,1) 100%);
-  grid-column: 2;
-  padding: 3rem 0;
+figure {
+  display: block;
+  width: 100%;
+  min-width: 200px;
+  max-width: 300px;
+  justify-self: start;
   text-align: center;
-
-  h1 {
-    text-transform: uppercase;
-    font-size: $h2-size;
-    color: #e8ebd9;
-    span {
-      border-bottom: 1px solid #999;
-    }
-  }  
-}
-
-  section {
-    padding: 1.5rem 0;
-  }
-
-  h2 {
-    // @include heading-styles;
-    font-size: $h4-size;
-    line-height: $h4-line-height;
-    color: #e8ebd9;
-  }
-
-  h3 {
-    @include heading-styles;
-    font-size: $h6-size;
-    line-height: $h6-line-height;
-  }
-
-  p {
-    max-width: 600px;
-  }
+  align-self: center;
 
   @include for-size(desktop) {
-    p {
-      max-width: 75vw;
-    }
-  }
-
-  figure {
-    display: block;
-    width: 100%;
-    min-width: 200px;
-    max-width: 300px;
-    justify-self: start;
-    text-align: center;
-    align-self: center;
-
-    @include for-size(desktop) {
-      figure {
-        justify-self: center;
-      }
-    }
-    
-    @include for-size(tablet) {
-      .disasters__plight {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-    }
-    img {
-      border-radius: 5px;
-    }
-  }
-
-  // MISSION
-  .mission {
-    display: grid;
-    grid-column: 2;
-    grid-template-columns: 1fr; 
-
-    &__headergroup {
-      align-self: center;
-      h2 {
-        color: #333;
-      }
+    figure {
+      // justify-self: center;
     }
   }
 
   @include for-size(tablet) {
-    .mission {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    // .disasters__plight {
+      // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    // }
+  } 
+}
+
+// ----------------------------------------------
+
+.hero {
+  position: relative;
+  padding: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include hero-bg;
+  }
+
+  &__container {
+    .hero__title {
+      position: relative;
+      color: $primary-color;
+      font-size: $h3-size;
+      line-height: $h4-line-height;
+      padding-bottom: 1rem;
+    }
+
+    @include for-size(tablet) {
+      // h1.hero__title {
+      //   font-size: $h2-size;
+      //   line-height: $h3-line-height;
+      // }
+    }
+
+    .hero__subheader {
+      color: #15202b;
+      font-family: Saros;
+      font-size: $h6-size;
+      line-height: $h6-line-height;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    // @include for-size(tablet) {
+    //   .hero__subheader {
+    //     font-size: $h5-size;
+    //     line-height: $h5-line-height;
+    //   }
+    // }
+
+    // @include for-size(desktop) {
+    //   .hero__subheader {
+    //     width: 80vw;
+    //   }
+    // }
+
+    .author {
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .hero__cta {
+      @include button;
+      background-color: #037820;
+      color: #cdc8c8;
+      cursor: pointer;
+      font-size: 1.5rem;
+      grid-column: 2;
+      margin: 1rem 0;
+      position: relative;
+      width: max-content;
+    }
+  }
+}
+
+// ----------------------------------------------
+
+.main__headings {
+  background: linear-gradient(
+    90deg,
+    rgba(17, 16, 0, 1) 0%,
+    rgba(68, 68, 68, 1) 50%,
+    rgba(17, 16, 0, 1) 100%
+  );
+  grid-column: 2;
+  padding: 3rem 0;
+  text-align: center;
+  display: grid;
+
+  .main__title {
+    text-transform: uppercase;
+    font-size: $h2-size;
+    span {
+      border-bottom: 1px solid #999;
     }
   }
 
-  //DISASTERS
-  .disasters {
-    grid-column: 2;
+  .main__subheader,
+  .main__title {
+    color: #e8ebd9;
+    text-decoration: none;
+  }
+}
 
-    h2 {
-      color: #333;
-    }
+// Mission section
+.mission {
+  margin: 5rem 1rem;
+  .mission__subheader {}
+  .scetion {
+    margin-bottom: 3rem;
+  }
+}
 
+// @include for-size(tablet) {
+//   .mission {
+//     display: grid;
+
+//     &__headergroup {
+//       order: 1;
+
+//       figure {
+//         order: 2;
+//         width: 100%;
+//         display: block;
+//       }
+//     }
+//   }
+// }
+
+//DISASTERS
+.disasters {
+  grid-column: 2;
+  .disasters__headings {
+    color: #333;
+    // margin-bottom: 3rem;
+    // font-weight: 400;
+    font-size: 20px;
+  }
+  .disasters__grid {
+    
     .disasters__plight {
       align-items: center;
       display: grid;
       column-gap: 5rem;
       justify-items: center;
+      margin-bottom: 3rem;
 
       p {
         align-self: center;
       }
     }
 
-    @include for-size(tablet) {
-      .disasters__plight {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-    }
   }
-
-  .solution {
-    grid-column: 2;
-
-    h2 {
-      color: #333;
-    }
-  }
-
   
 
+  // @include for-size(tablet) {
+  //   .disasters__plight {
+  //     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  //   }
+  // }
+}
 
+.solution {
+  grid-column: 2;
+  margin-bottom: 0;
+  padding-bottom: 10rem;
+}

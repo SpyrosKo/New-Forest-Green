@@ -32,13 +32,8 @@
 
 // Media Queries
 @mixin for-size($size) {
-   @if $size==phone {
-      @media (max-width: 565px) {
-         @content;
-      }
-   }
 
-   @else if $size==tablet {
+   @if $size==tablet {
       @media (min-width: 566px) {
          @content;
       }
